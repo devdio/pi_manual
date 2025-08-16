@@ -31,15 +31,30 @@ KamibotPi는 직렬(Serial) 통신을 통해 KamibotPi 하드웨어와 통신하
 - 배터리/버전 조회
 
 ## 설치 및 초기 설정
+### Kamibot용 드라이버 설치
+```
+CDM2
+```
+### VSCode 설치
+```
+https://code.visualstudio.com/download
+```
+### 파이썬 가상환경 만들기
+```bash
+pythonn -m venv .venv
+```
+### 가상환경 활성화
+```
+./venv/Scrpts/activate.ps1
+```
 
 ### 필요 패키지 설치
 ```bash
 pip install pyKamipi
 ```
 
-### 포트 확인
+### 카미봇파이용 동글의 포트 확인
 - **Windows**: 장치 관리자에서 COM 포트 확인 (예: COM5)
-- **Linux/Mac**: `/dev/ttyUSB0` 또는 `/dev/ttyACM0` 등
 
 ### 기본 연결
 ```python
