@@ -32,23 +32,31 @@ KamibotPi는 직렬(Serial) 통신을 통해 KamibotPi 하드웨어와 통신하
 
 ## 설치 및 초기 설정
 ### Kamibot용 드라이버 설치
+```./drivers/CDM21228_Setup.zip``` 파일을 다운로드 받아서, 압축을 푼 후 설치한다.
 ```
-CDM2
+CDM21228_Setup.exe 파일 설치 
 ```
 ### VSCode 설치
 ```
 https://code.visualstudio.com/download
 ```
+VSCode 프로그램을 다운로드 받아서 설치 
+
 ### 파이썬 가상환경 만들기
 ```bash
 pythonn -m venv .venv
 ```
 ### 가상환경 활성화
 ```
+# Powershell
 ./venv/Scrpts/activate.ps1
+
+# CommandLine
+./venv/Scrpts/activate.bat
 ```
 
 ### 필요 패키지 설치
+카미봇 파이용 파이썬 라이브러리 설치 
 ```bash
 pip install pyKamipi
 ```
