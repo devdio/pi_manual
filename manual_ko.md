@@ -34,7 +34,7 @@ KamibotPi는 직렬(Serial) 통신을 통해 KamibotPi 하드웨어와 통신하
 
 ### 필요 패키지 설치
 ```bash
-pip install pyserial
+pip install pyKamipi
 ```
 
 ### 포트 확인
