@@ -238,16 +238,21 @@ print(f"라인 센서: 좌={left}, 중앙={center}, 우={right}")
 
 ```
 #### 컬러 센서
+- 컬러센서의 값을 읽어서 등록된 색상과 비교하여 등록된 색상과 가장 가까운 값을 리턴합니다.
+0: 등록된 색상이 아닌 경우, 1:빨강, 2:주황, 3:노랑, 4:초록,5:파랑. 6:하늘색,7:보라,8:흰색,9:검은색  
+
 ```python
 # 컬러 센서 읽기
 color = kb.get_color_sensor(True)
 print(f"감지된 색상 코드: {color}")
 
-# 색상별 동작 예제
-if color == 1:  # 색상 코드는 펌웨어 정의에 따름
-    kb.turn_led_idx(0)  # 빨간 LED
-elif color == 2:
-    kb.turn_led_idx(3)  # 초록 LED
+```
+
+- 컬러센서의 RGB 각 값을 읽어오기
+ 
+```
+r, g, b = kb.get_color_elements(True)
+print(f"RGB: ({r}, {g}, {b})")
 ```
 
 #### 물체 감지 센서
