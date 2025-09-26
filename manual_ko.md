@@ -196,7 +196,7 @@ kb.move_right_unit(10, opt='-l', speed=60)     # 10cm 우측 이동
 # 시간 단위 (초)
 kb.move_forward_unit(2, opt='-t', speed=80)    # 2초 전진
 
-# 스텝 단위
+# 스텝 단위 (약 196스텝이 한반퀴에 해당한다.)
 kb.move_forward_unit(500, opt='-s', speed=60)  # 500스텝 전진
 ```
 
