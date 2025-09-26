@@ -73,10 +73,10 @@ from kamibotpi import KamibotPi
 kb = KamibotPi(port="COM8", baud=57600, timeout=2, verbose=True)
 kb.init()  # 로봇 초기화
 ```
->> `port`: 직렬 포트 이름 (필수)
->> `baud`: 보오 레이트 (기본값: 57600)
->> `timeout`: 읽기 타임아웃 초 (기본값: 2)
->> `verbose`: 디버그 출력 여부 (기본값: False)
+> `port`: 직렬 포트 이름 (필수)  
+> `baud`: 보오 레이트 (기본값: 57600)  
+> `timeout`: 읽기 타임아웃 초 (기본값: 2)  
+> `verbose`: 디버그 출력 여부 (기본값: False)  
   
 ## 기본 사용법
 
