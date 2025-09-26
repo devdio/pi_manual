@@ -130,15 +130,25 @@ kb.turn_back(value=1, opt="-l")   # 180도 회전
 
 #### 속도 제어
 맵보드와 상관없이 로봇 바퀴의 회전 방향과 속도를 제어할 수 있는 함수들입니다.  
+속도는 0 ~ 255 사이의 값으로 지정합니다.  
   
 ```python
 # 좌우 바퀴 속도 개별 제어
 kb.go_forward_speed(120, 120)   # 전진
+kb.delayms(1000)          # 1초 대기
 kb.go_backward_speed(100, 100)  # 후진
+kb.delayms(1000)          # 1초 대기
 kb.go_left_speed(90)            # 왼쪽 회전
+kb.delayms(1000)          # 1초 대기
 kb.go_right_speed(90)           # 오른쪽 회전
+kb.delayms(1000)          # 1초 대기
+# 정지
+kb.stop()
 
-# 방향과 속도 동시 제어
+```
+
+-  방향과 속도 동시 제어
+```
 kb.go_dir_speed('f', 120, 'b', 110)  # 좌측 전진, 우측 후진
 
 # 정지
