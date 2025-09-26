@@ -102,14 +102,13 @@ finally:
 
 
 ```
-
-
-
 ## 기능별 상세 가이드
 
 ### 이동 제어
 
 #### 맵보드/라인맵보드 이동
+아래 함수들이 정상적으로 동작하기 위해서는 라인과 블록이 디자인된 맵보드가 필요합니다.  
+  
 ```python
 # 전진 (라인맵보드)
 kb.move_forward(2, opt="-l")  # 2칸 전진
@@ -127,6 +126,8 @@ kb.turn_back(value=1, opt="-l")   # 180도 회전
 ```
 
 #### 속도 제어
+맵보드와 상관없이 로봇 바퀴의 회전 방향과 속도를 제어할 수 있는 함수들입니다.  
+  
 ```python
 # 좌우 바퀴 속도 개별 제어
 kb.go_forward_speed(120, 120)   # 전진
@@ -142,6 +143,8 @@ kb.stop()
 ```
 
 #### 라인트레이서
+색상과 굵기의 규격에 맞는 라인을 따라서 이동하는 기능입니다.  
+  
 ```python
 # 라인트레이서 시작
 kb.toggle_linetracer(True, speed=100)
@@ -153,15 +156,20 @@ kb.toggle_linetracer(False)
 ### 정밀 제어
 
 #### 스텝/시간 기반 이동
+로봇의 동작을 정밀하게 제어하기 위해서 스템수 또는 시간을 제어할 수 있는 함수입니다. 
+1 스텝이 어느정도의 길이를 이동하는지는, 로봇마다 조금씩 차이가 있을 수 있으므로, 테스트해보기 바랍니다.  
+  
 ```python
 # 스텝 단위 이동
-kb.move_step('f', 400, 'b', 400)  # 좌측 전진 400스텝, 우측 후진 400스텝
+kb.move_step('f', 10, 'f', 10)  # 좌측 전진 400스텝, 우측 후진 400스텝
 
 # 시간 단위 이동
 kb.move_time('f', 2, 'f', 2)  # 양쪽 2초 전진
 ```
 
 #### 단위 기반 이동
+좌우의 바퀴를 같은 방향으로 회전합니다. 길이나 시간 단위를 지정해서 로봇의 동작을 제어할 수 있습니다.  
+  
 ```python
 # 거리 단위 (cm)
 kb.move_forward_unit(20, opt='-l', speed=80)   # 20cm 전진
@@ -177,6 +185,7 @@ kb.move_forward_unit(500, opt='-s', speed=60)  # 500스텝 전진
 ```
 
 #### 연속 회전
+- 동작 안함 (확인 중...)
 ```python
 # 지속 회전 (정지 명령까지 계속)
 kb.turn_continous('l', speed=80)  # 왼쪽 연속 회전
@@ -223,26 +232,11 @@ kb.turn_led(*LedColor.BLUE)    # 파랑
 #### 라인 센서
 ```python
 # 라인 센서 읽기
+
 left, center, right = kb.get_line_sensor(True)
 print(f"라인 센서: 좌={left}, 중앙={center}, 우={right}")
 
-# 라인 감지 예제
-if center > 100:  # 임계값은 환경에 따라 조정
-    print("중앙에 라인 감지됨")
 ```
-
-#### 물체 감지 센서
-```python
-# 물체 감지 센서 읽기
-left_obj, right_obj = kb.get_object_detect(True)
-print(f"물체 감지: 좌={left_obj}, 우={right_obj}")
-
-# 물체 감지 예제
-if left_obj > 50 or right_obj > 50:  # 임계값 조정 필요
-    print("물체 감지됨!")
-    kb.stop()
-```
-
 #### 컬러 센서
 ```python
 # 컬러 센서 읽기
@@ -255,6 +249,22 @@ if color == 1:  # 색상 코드는 펌웨어 정의에 따름
 elif color == 2:
     kb.turn_led_idx(3)  # 초록 LED
 ```
+
+#### 물체 감지 센서
+적외선 거리센서를 사용합니다. 좌우의 값이 다를 수 있으며, 정밀한 거리를 측정하지는 못합니다. 기능을 사용하기 위해서는 실제로 테스트를 통해서 사용해야 합니다.  
+
+```python
+# 물체 감지 센서 읽기
+left_obj, right_obj = kb.get_object_detect(True)
+print(f"물체 감지: 좌={left_obj}, 우={right_obj}")
+
+# 물체 감지 예제
+if left_obj > 50 or right_obj > 50:  # 임계값 조정 필요
+    print("물체 감지됨!")
+    kb.stop()
+```
+
+
 
 #### 배터리 확인
 ```python
