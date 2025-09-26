@@ -78,20 +78,25 @@ kb.init()  # 로봇 초기화
 
 ### 기본 템플릿
 ```python
-from kamibotpi import KamibotPi
+#-*-coding:utf-8-*-
+from pyKamipi.pibot import *
 
-# 연결 및 초기화
-kb = KamibotPi(port="COM5", baud=57600, timeout=2, verbose=False)
-kb.init()
+
+# 카미봇 연결
+robot = KamibotPi('COM8', 57600)
+robot.init()  # 로봇 초기화
 
 try:
     # 여기에 로봇 제어 코드 작성
-    kb.move_forward(2, opt="-l")
-    kb.turn_left()
+    robot.go_dir_speed("f", 50, "f", 50)
+    robot.delayms(1000)
+    robot.stop()
     
 finally:
     # 프로그램 종료
-    kb.close()  # 주의: sys.exit(0) 호출됨
+    robot.close()  # 주의: sys.exit(0) 호출됨
+
+
 ```
 
 ### 생성자 매개변수
