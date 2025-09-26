@@ -32,7 +32,7 @@ KamibotPi는 직렬(Serial) 통신을 통해 KamibotPi 하드웨어와 통신하
 
 ## 설치 및 초기 설정
 ### Kamibot용 드라이버 설치
-```./drivers/CDM21228_Setup.zip``` 파일을 다운로드 받아서, 압축을 푼 후 설치한다.
+```./drivers/CDM21228_Setup.zip``` 파일을 다운로드 받아서, 압축을 푼 후 설치한다. 설치는 윈도우즈의 관리자 권한으로 설치해야 합니다.
 ```
 CDM21228_Setup.exe 파일 설치 
 ```
@@ -43,16 +43,17 @@ https://code.visualstudio.com/download
 VSCode 프로그램을 다운로드 받아서 설치 
 
 ### 파이썬 가상환경 만들기
+가상환경은 Miniconda 를 사용해서 python 3.10을 사용합니다.
 ```bash
-pythonn -m venv .venv
+conda create -n [가상환경 이름] python==3.10
 ```
 ### 가상환경 활성화
 ```
-# Powershell
-./venv/Scrpts/activate.ps1
-
-# CommandLine
-./venv/Scrpts/activate.bat
+conda activate [가상 환경 이름]
+```
+파이썬의 버전을 확인합니다.
+```
+python --version
 ```
 
 ### 필요 패키지 설치
