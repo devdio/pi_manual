@@ -70,10 +70,14 @@ pip install pyKamipi
 from kamibotpi import KamibotPi
 
 # 포트와 설정으로 연결
-kb = KamibotPi(port="COM5", baud=57600, timeout=2, verbose=True)
+kb = KamibotPi(port="COM8", baud=57600, timeout=2, verbose=True)
 kb.init()  # 로봇 초기화
 ```
-
+>> `port`: 직렬 포트 이름 (필수)
+>> `baud`: 보오 레이트 (기본값: 57600)
+>> `timeout`: 읽기 타임아웃 초 (기본값: 2)
+>> `verbose`: 디버그 출력 여부 (기본값: False)
+  
 ## 기본 사용법
 
 ### 기본 템플릿
@@ -99,11 +103,7 @@ finally:
 
 ```
 
-### 생성자 매개변수
-- `port`: 직렬 포트 이름 (필수)
-- `baud`: 보오 레이트 (기본값: 57600)
-- `timeout`: 읽기 타임아웃 초 (기본값: 2)
-- `verbose`: 디버그 출력 여부 (기본값: False)
+
 
 ## 기능별 상세 가이드
 
