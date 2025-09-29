@@ -21,7 +21,7 @@ finally:
 ```
 
 ## Line Follower Robot
-```
+```python
 from pyKamipi.pibot import *
 
 robot = KamibotPi('COM8', 57600)
