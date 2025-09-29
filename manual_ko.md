@@ -32,7 +32,7 @@ KamibotPi 객체를 생성하고 시리얼 포트로 연결합니다.
 
 **예제:**
 ```python
-robot = KamibotPi(port='/dev/ttyUSB0', baud=57600, timeout=2, verbose=False)
+robot = KamibotPi(port='COM8', baud=57600, timeout=2, verbose=False)
 ```
 
 ---
