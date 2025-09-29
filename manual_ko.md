@@ -17,7 +17,7 @@ KamibotPi 로봇을 제어하기 위한 Python 라이브러리의 완전한 API 
 
 ---
 
-## 파이썬 가상환경 만들기
+## 파이썬 가상환경 만들기 (옵션)
 - VSCode 설치 및 파이썬 플러그인 설치
 
 - [Miniconda 다운로드]()에서 Miniconda를 다운로드받아서 설치합니다.
@@ -29,6 +29,8 @@ conda create -n [가상환경 이름] python==3.10
 ```
 conda activate [가상환경 이름]
 ```
+
+## 라이브러리 설치
 - 카미봇파이용 라이브러리 설치
 ```
 pip install pyKamipi
